@@ -1,28 +1,43 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import stylename from './Dialogs.module.css';
-
-const DialogItem = (props) => {
-    return (
-        <div className={stylename.dialog + ' ' + stylename.active}>
-            <NavLink to={'/dialogs/' + props.id} activeClassName={stylename.activeLink}>{props.name}</NavLink>
-        </div>
-    )
-}
-
-const Message = (props) => {
-    return (
-        <div className={stylename.message}>{props.message}</div>
-    )
-}
+import DialogItem from './DialogItems/DialogItems';
+import stylename2 from './DialogItems/DialogItems.module.css';
+import Message from './Message/Message';
+import stylename3 from './Message/Message.module.css';
 
 const Dialogs = (props) => {
+
+    let d = [
+        {id:1, name:'Eugene'},
+        {id:2, name:'Irison'},
+        {id:3, name:'Ronny'},
+    ]
+
+    let m = [
+        {message:'Choice!'},
+        {message:'Hey bro'},
+        {message:'Chur mate'},
+    ]
+
+    let MessagesElements2 = m.map(m => <Message message={m.message} />)
+
+    let DialogsElements = [
+        <DialogItem id={d[0].id} name={d[0].name} />,
+        <DialogItem id={d[1].id} name={d[1].name} />,
+        <DialogItem id={d[2].id} name={d[2].name} />
+    ]
+
+    let DialogsElements2 = d.map(d => <DialogItem id={d.id} name={d.name} />)
+
     return (
         <div className={stylename.dialogs}>
-            <div className={stylename.dialogsItems}>
-                < DialogItem id='1' name='Eugene' />
-                < DialogItem id='2' name='Irison' />
-                < DialogItem id='3' name='Ronny' />
+            <div className={stylename2.dialogsItems}>
+                { DialogsElements2 }
+
+                {/* <DialogItem id={d[0].id} name={d[0].name} />
+                <DialogItem id={d[1].id} name={d[1].name} />
+                <DialogItem id={d[2].id} name={d[2].name} /> */}
                 {/* <div className={stylename.dialog + ' ' + stylename.active}>
                     <NavLink to='/dialogs/1' activeClassName={stylename.activeLink}>Eugene</NavLink>
                 </div>
@@ -34,9 +49,10 @@ const Dialogs = (props) => {
                 </div> */}
             </div>
             <div className={stylename.messages}>
-                < Message message='Whazuup' />
-                < Message message='Hey bro' />
-                < Message message='Chur mate' />
+            { MessagesElements2 }
+                {/* < Message message={m[0].message} />
+                < Message message={m[1].message} />
+                < Message message={m[2].message} /> */}
             </div>
         </div>
     );

@@ -1,3 +1,7 @@
 .textarea {
     margin-top: 10px;
 }
+
+.modalFooter button { 
+    margin-right: 15px;
+}

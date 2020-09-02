@@ -1,0 +1,37 @@
+.whatever {
+    padding: 10px;
+}
+
+.dialogs {
+    display: grid;
+    grid-template-columns: 3fr 10fr;
+}
+
+.dialog a {
+    color: rgb(14, 75, 62);
+    text-decoration: none;
+}
+
+.dialogsItems {
+    padding: 15px;
+}
+
+.dialogsItems .active {
+    color: 
+}
+
+.dialogsItems a.activeLink {
+    color: rgb(143, 30, 30);
+  }
+
+.messages {
+    padding: 15px;
+}
+
+.message {
+
+}
+
+.active {
+    color: aqua;
+}

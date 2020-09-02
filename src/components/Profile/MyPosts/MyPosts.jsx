@@ -7,22 +7,33 @@ import Post from './Post/Post';
 
 
 const MyPosts = () => {
+
+  let PostsMessages = [
+    {message:'First message!', likeCount:21},
+    {message:'Second message', likeCount:25},
+    {message:'Third message', likeCount:47},
+]
+
+let PostsElements2 = PostsMessages.map( m => <Post message={m.message} likeCount={m.likeCount}/>)
+
+
     return (
     <div className={cl2.content}>
     <div>
       <h3>My posts</h3>
       <div>
         <div className={customstyle.textarea}><textarea></textarea></div>
-        <div>
+        <div className={customstyle.modalFooter}>
         <button>Add Post</button>
         <button>Remove</button>
       </div>
       </div>
       <div className={cl.content}>
       <div className={cl.posts}>
-        <Post message='First message' likeCount='5'/>
-        <Post message='Second message' likeCount='17'/>
-        <Post message='Third message' likeCount='47'/>
+        { PostsElements2 }
+        {/* <Post message={PostsMessages[0].message} likeCount={PostsMessages[0].likeCount}/>
+        <Post message={PostsMessages[1].message} likeCount={PostsMessages[1].likeCount}/>
+        <Post message={PostsMessages[2].message} likeCount={PostsMessages[2].likeCount}/> */}
       </div>
       </div>
     </div>

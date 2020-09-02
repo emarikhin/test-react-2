@@ -7,7 +7,7 @@ const Post = (props) => {
       <img src='https://lumiere-a.akamaihd.net/v1/images/character_themuppets_kermit_09279e8e.jpeg?region=0,0,300,300'></img>
       { props.message }
       <div>
-        <span>like=</span>
+        <span>likes: </span>
         { props.likeCount }
       </div>
     </div>
