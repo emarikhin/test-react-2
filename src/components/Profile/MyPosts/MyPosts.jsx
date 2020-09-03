@@ -3,18 +3,17 @@ import cl from './Post/Post.module.css';
 import cl2 from '../Profile.module.css';
 import customstyle from './MyPosts.module.css';
 import Post from './Post/Post';
+// import PostsMessages from './../PostsMessages/PostsMessages';
 
+const MyPosts = (props) => {
 
-
-const MyPosts = () => {
-
-  let PostsMessages = [
-    {message:'First message!', likeCount:21},
-    {message:'Second message', likeCount:25},
-    {message:'Third message', likeCount:47},
-]
-
-let PostsElements2 = PostsMessages.map( m => <Post message={m.message} likeCount={m.likeCount}/>)
+//   let PostsMessages = [
+//     {message:'First message!', likeCount:21},
+//     {message:'Second message', likeCount:25},
+//     {message:'Third message', likeCount:47},
+// ]
+ 
+let PostsElements2 = props.PostsMessages.map( m => <Post message={m.message} likeCount={m.likeCount}/>)
 
 
     return (

@@ -8,27 +8,23 @@ import stylename3 from './Message/Message.module.css';
 
 const Dialogs = (props) => {
 
-    let d = [
-        {id:1, name:'Eugene'},
-        {id:2, name:'Irison'},
-        {id:3, name:'Ronny'},
-    ]
+    // let d = [
+    //     {id:1, name:'Eugene'},
+    //     {id:2, name:'Irison'},
+    //     {id:3, name:'Ronny'},
+    // ]
 
-    let m = [
-        {message:'Choice!'},
-        {message:'Hey bro'},
-        {message:'Chur mate'},
-    ]
+    // let m = [
+    //     {message:'Choice!'},
+    //     {message:'Hey bro'},
+    //     {message:'Chur mate'},
+    // ]
 
-    let MessagesElements2 = m.map(m => <Message message={m.message} />)
+    // let MessagesElements2 = props.m.map(m => <Message message={m.message} />)
+    // let DialogsElements2 = props.d.map(d => <DialogItem id={d.id} name={d.name} />)
 
-    let DialogsElements = [
-        <DialogItem id={d[0].id} name={d[0].name} />,
-        <DialogItem id={d[1].id} name={d[1].name} />,
-        <DialogItem id={d[2].id} name={d[2].name} />
-    ]
-
-    let DialogsElements2 = d.map(d => <DialogItem id={d.id} name={d.name} />)
+    let MessagesElements2 = props.dialogsState.m.map(m => <Message message={m.message} />)
+    let DialogsElements2 = props.dialogsState.d.map(d => <DialogItem id={d.id} name={d.name} />)
 
     return (
         <div className={stylename.dialogs}>
