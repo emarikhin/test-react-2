@@ -15,15 +15,21 @@ const MyPosts = (props) => {
  
 let PostsElements2 = props.PostsMessages.map( m => <Post message={m.message} likeCount={m.likeCount}/>)
 
+    let NewPostElement = React.createRef();    
+
+    let AddPost = () => { 
+      let text = NewPostElement.current.value;
+      alert(text);
+    }
 
     return (
     <div className={cl2.content}>
     <div>
       <h3>My posts</h3>
       <div>
-        <div className={customstyle.textarea}><textarea></textarea></div>
+        <div className={customstyle.textarea}><textarea ref={NewPostElement}></textarea></div>
         <div className={customstyle.modalFooter}>
-        <button>Add Post</button>
+        <button onClick={ AddPost }>Add Post</button>
         <button>Remove</button>
       </div>
       </div>
