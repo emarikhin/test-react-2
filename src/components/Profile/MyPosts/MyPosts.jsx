@@ -17,9 +17,10 @@ let PostsElements2 = props.PostsMessages.map( m => <Post message={m.message} lik
 
     let NewPostElement = React.createRef();    
 
-    let AddPost = () => { 
-      let text = NewPostElement.current.value;
-      alert(text);
+    let AddPost2 = () => { 
+      let textdata = NewPostElement.current.value;
+      props.AddPost(textdata);
+      NewPostElement.current.value = '';
     }
 
     return (
@@ -29,7 +30,7 @@ let PostsElements2 = props.PostsMessages.map( m => <Post message={m.message} lik
       <div>
         <div className={customstyle.textarea}><textarea ref={NewPostElement}></textarea></div>
         <div className={customstyle.modalFooter}>
-        <button onClick={ AddPost }>Add Post</button>
+        <button onClick={ AddPost2 }>Add Post</button>
         <button>Remove</button>
       </div>
       </div>

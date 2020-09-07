@@ -1,10 +1,12 @@
+import { rerenderCurrentState } from './../render';
+
 let state = {
     ProfilePage: {
         PostsMessages: [
-            { message: 'First message!', likeCount: 21 },
-            { message: 'Second message', likeCount: 25 },
-            { message: 'Third message', likeCount: 47 },
-            { message: 'Forth message', likeCount: 146 }
+            { id: 1, message: 'First message!', likeCount: 21 },
+            { id: 2, message: 'Second message', likeCount: 25 },
+            { id: 3, message: 'Third message', likeCount: 47 },
+            { id: 4, message: 'Forth message', likeCount: 146 }
         ]
     },
     DialogsPage: {
@@ -38,6 +40,17 @@ let state = {
         ]
     }
 }
+
+export let AddPost = (PostMessage) => {
+    let NewPost = {
+        id: 5,
+        message: PostMessage,
+        likeCount: 0
+    };
+    state.ProfilePage.PostsMessages.push(NewPost);
+    rerenderCurrentState(state);
+}
+
 
 // let AvaLink = props.dialogsState.d.map(ava => {
 //     return "<img src=" + ava + "></img>"

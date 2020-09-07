@@ -2,6 +2,7 @@ import React from 'react';
 import MyPosts from './MyPosts/MyPosts';
 import Post from './MyPosts/Post/Post';
 import ProfileInfo from './ProfileInfo/ProfileInfo';
+import { AddPost } from '../../redux/state';
 //import PostsMessages from './PostsMessages/PostsMessages';
 
 // let PostsMessages = [
@@ -18,7 +19,7 @@ const Profile = (props) => {
         <ProfileInfo />
       </div>
       <div>
-        <MyPosts PostsMessages={props.PostsMessages}/>
+        <MyPosts PostsMessages={props.PostsMessages} AddPost={props.AddPost}/>
       </div>
     </div>
   )

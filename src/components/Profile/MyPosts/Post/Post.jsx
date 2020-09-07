@@ -2,7 +2,7 @@ import React from 'react';
 import cl from './Post.module.css';
 
 const Post = (props) => {
-  let AvaSource = <img src='https://lumiere-a.akamaihd.net/v1/images/character_themuppets_kermit_09279e8e.jpeg?region=0,0,300,300'></img>
+  let AvaSource = <img src='https://partisandawn.files.wordpress.com/2011/11/fred-flintstone.jpg'></img>
   return (
     <div className={cl.item}>
       {/* <img src='https://lumiere-a.akamaihd.net/v1/images/character_themuppets_kermit_09279e8e.jpeg?region=0,0,300,300'></img> */}
