@@ -4,5 +4,7 @@
   }
 
 .header img {
+    margin-top: -5px;
     width: 65px;
+    height: 65px;
   }

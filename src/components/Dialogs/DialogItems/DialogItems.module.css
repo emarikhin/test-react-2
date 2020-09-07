@@ -35,3 +35,10 @@
 .active {
     color: aqua;
 }
+
+.dialogsItems .active img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    padding: 10px;
+}

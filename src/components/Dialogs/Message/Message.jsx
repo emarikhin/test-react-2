@@ -4,7 +4,10 @@ import stylename from './Message.module.css';
 
 const Message = (props) => {
     return (
-        <div className={stylename.message}>{props.message}</div>
+        <div>
+            <div className={stylename.messagesLeft}><img className={stylename.item} src= {props.ava}/>{props.message}</div>
+            <div className={stylename.messagesRight}>{props.message}<img className={stylename.item} src= {props.myava}/></div>
+        </div>
     )
 }
 

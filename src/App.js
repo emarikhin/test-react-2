@@ -12,6 +12,7 @@ import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
 import DialogItem from './components/Dialogs/DialogItems/DialogItems';
 import Message from './components/Dialogs/Message/Message';
+import SiteBar from './components/SiteBar/SiteBar';
 
 // let d = [
 //   {id:1, name:'Eugene'},
@@ -36,20 +37,29 @@ const App = (props) => {
   //   { message: 'Third message', likeCount: 47 },
   // ]
 
+  // let SiteBarElements = props.appState.SiteBar.friends.map(f => <Navbar name={f.name} ava={f.ava}/>)
+console.log(props)
   return (
     <BrowserRouter>
       <div className='app-wrapper'>
         <Header />
-        <Navbar />
+        <Navbar SiteBar={props.appState.SiteBar.f} />
         <div className='app-wrapper-content'>
           {/* <Route path='/dialogs' component={Dialogs} /> */}
           {/* <Route path='/dialogs' render={ () => <Dialogs d={props.appState.DialogsPage.d} m={props.appState.DialogsPage.m}/>} /> */}
           {/* <Route path='/profile' component={Profile} /> */}
-          <Route path='/dialogs' render={ () => <Dialogs dialogsState={props.appState.DialogsPage}/>} />
+          <Route path='/dialogs' render={ () => <Dialogs dialogsState={props.appState.DialogsPage} AvaDialogs={props.appState.AvaDialogs}/>} />
           <Route path='/profile' render={ () => <Profile PostsMessages={props.appState.ProfilePage.PostsMessages}/>} />
           <Route path='/news' component={MyNews} />
           <Route path='/music' component={Music} />
           <Route path='/settings' component={Settings} />
+          {/* <Route path='/friends' render={ () => <SiteBar FriendsList={props.appState.SiteBar.friends}/>} /> */}
+          {/* { SiteBarElements } */}
+          {/* <SiteBar name={props.appState.SiteBar.friends.name} ava={props.appState.SiteBar.friends.ava}/> */}
+          {/* <SiteBar SiteBar={props.appState.SiteBar.f} /> */}
+          {/* <Route path='/friends' render={ () => <SiteBar SiteBar={props.appState.SiteBar.f}/>}/> */}
+          {/* <Route path='/profile' render={ () => <SiteBar SiteBar={props.appState.SiteBar}/>} /> */}
+
         </div>
       </div>
     </BrowserRouter>

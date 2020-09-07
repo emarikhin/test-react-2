@@ -7,48 +7,17 @@ import Message from './Message/Message';
 import stylename3 from './Message/Message.module.css';
 
 const Dialogs = (props) => {
-
-    // let d = [
-    //     {id:1, name:'Eugene'},
-    //     {id:2, name:'Irison'},
-    //     {id:3, name:'Ronny'},
-    // ]
-
-    // let m = [
-    //     {message:'Choice!'},
-    //     {message:'Hey bro'},
-    //     {message:'Chur mate'},
-    // ]
-
-    // let MessagesElements2 = props.m.map(m => <Message message={m.message} />)
-    // let DialogsElements2 = props.d.map(d => <DialogItem id={d.id} name={d.name} />)
-
-    let MessagesElements2 = props.dialogsState.m.map(m => <Message message={m.message} />)
-    let DialogsElements2 = props.dialogsState.d.map(d => <DialogItem id={d.id} name={d.name} />)
+    console.log(props.dialogsState);
+    let MessagesElements2 = props.dialogsState.m.map(m => <Message message={m.message} ava={m.ava} myava={m.myava} />)
+    let DialogsElements2 = props.dialogsState.d.map(d => <DialogItem id={d.id} name={d.name} ava={d.ava} />)
 
     return (
         <div className={stylename.dialogs}>
             <div className={stylename2.dialogsItems}>
-                { DialogsElements2 }
-
-                {/* <DialogItem id={d[0].id} name={d[0].name} />
-                <DialogItem id={d[1].id} name={d[1].name} />
-                <DialogItem id={d[2].id} name={d[2].name} /> */}
-                {/* <div className={stylename.dialog + ' ' + stylename.active}>
-                    <NavLink to='/dialogs/1' activeClassName={stylename.activeLink}>Eugene</NavLink>
-                </div>
-                <div className={stylename.dialog}>
-                    <NavLink to='/dialogs/2' activeClassName={stylename.activeLink}>Irison</NavLink>
-                </div>
-                <div className={stylename.dialog}>
-                    <NavLink to='/dialogs/3' activeClassName={stylename.activeLink}>Ronny</NavLink>
-                </div> */}
+                {DialogsElements2}
             </div>
             <div className={stylename.messages}>
-            { MessagesElements2 }
-                {/* < Message message={m[0].message} />
-                < Message message={m[1].message} />
-                < Message message={m[2].message} /> */}
+                {MessagesElements2}
             </div>
         </div>
     );

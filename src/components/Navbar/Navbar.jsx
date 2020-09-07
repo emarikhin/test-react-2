@@ -1,8 +1,9 @@
 import React from 'react';
 import customstyle from './Navbar.module.css';
 import { NavLink } from 'react-router-dom';
+import SiteBar from './../SiteBar/SiteBar';
 
-const Navbar = () => {
+const Navbar = (props) => {
     return (
     <nav className={customstyle.nav}>
         <div className={customstyle.item}>
@@ -20,6 +21,13 @@ const Navbar = () => {
         <div className={customstyle.item}>
             <NavLink to='/settings' activeClassName={customstyle.activeLink}>Settings</NavLink>
         </div>
+        <div>
+        <div className={customstyle.friends}><h3>Friends</h3></div>
+            <SiteBar SiteBar={props.SiteBar}/>
+        </div>
+        {/* <div className={customstyle.item}>
+            <NavLink to='/friends' activeClassName={customstyle.activeLink}>Friends</NavLink>
+        </div> */}
     </nav>
     )
 }
