@@ -49,7 +49,7 @@ console.log(props)
           {/* <Route path='/dialogs' render={ () => <Dialogs d={props.appState.DialogsPage.d} m={props.appState.DialogsPage.m}/>} /> */}
           {/* <Route path='/profile' component={Profile} /> */}
           <Route path='/dialogs' render={ () => <Dialogs dialogsState={props.appState.DialogsPage} AvaDialogs={props.appState.AvaDialogs}/>} />
-          <Route path='/profile' render={ () => <Profile PostsMessages={props.appState.ProfilePage.PostsMessages} AddPost={props.AddPost}/>} />
+          <Route path='/profile' render={ () => <Profile PostsMessages={props.appState.ProfilePage.PostsMessages} AddPost={props.AddPost} PostText = {props.appState.ProfilePage.PostText} UpdatePost={props.UpdatePost}/>} />
           <Route path='/news' component={MyNews} />
           <Route path='/music' component={Music} />
           <Route path='/settings' component={Settings} />

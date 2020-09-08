@@ -23,12 +23,18 @@ let PostsElements2 = props.PostsMessages.map( m => <Post message={m.message} lik
       NewPostElement.current.value = '';
     }
 
+    let OnChangeField = () => {
+      let textdata = NewPostElement.current.value;
+      props.UpdatePost(textdata)
+      console.log(textdata);
+    }
+
     return (
     <div className={cl2.content}>
     <div>
       <h3>My posts</h3>
       <div>
-        <div className={customstyle.textarea}><textarea ref={NewPostElement}></textarea></div>
+        <div className={customstyle.textarea}><textarea onChange={ OnChangeField } ref={NewPostElement} value={props.PostText}/></div>
         <div className={customstyle.modalFooter}>
         <button onClick={ AddPost2 }>Add Post</button>
         <button>Remove</button>

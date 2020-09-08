@@ -7,7 +7,8 @@ let state = {
             { id: 2, message: 'Second message', likeCount: 25 },
             { id: 3, message: 'Third message', likeCount: 47 },
             { id: 4, message: 'Forth message', likeCount: 146 }
-        ]
+        ],
+        PostText: "Eugene"
     },
     DialogsPage: {
         d: [
@@ -51,6 +52,10 @@ export let AddPost = (PostMessage) => {
     rerenderCurrentState(state);
 }
 
+export let UpdatePost = (UpdatedText) => {
+    state.ProfilePage.PostText = UpdatedText;
+    rerenderCurrentState(state);
+}
 
 // let AvaLink = props.dialogsState.d.map(ava => {
 //     return "<img src=" + ava + "></img>"

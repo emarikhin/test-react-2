@@ -19,7 +19,7 @@ const Profile = (props) => {
         <ProfileInfo />
       </div>
       <div>
-        <MyPosts PostsMessages={props.PostsMessages} AddPost={props.AddPost}/>
+        <MyPosts PostsMessages={props.PostsMessages} AddPost={props.AddPost} PostText = {props.PostText} UpdatePost={props.UpdatePost}/>
       </div>
     </div>
   )

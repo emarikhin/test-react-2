@@ -3,13 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { AddPost } from './redux/state';
+import { AddPost, UpdatePost } from './redux/state';
 import { BrowserRouter, Route } from 'react-router-dom';
 
 export let rerenderCurrentState = (state) => {
     return (
         ReactDOM.render(
-            <App appState={state} AddPost={ AddPost }/>, document.getElementById('root'))
+            <App appState={state} 
+                 AddPost={ AddPost }
+                 UpdatePost={ UpdatePost } />, document.getElementById('root'))
     );
 }
 
