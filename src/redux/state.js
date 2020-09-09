@@ -8,7 +8,7 @@ let state = {
             { id: 3, message: 'Third message', likeCount: 47 },
             { id: 4, message: 'Forth message', likeCount: 146 }
         ],
-        PostText: "Eugene"
+        PostText: ""
     },
     DialogsPage: {
         d: [
@@ -18,8 +18,8 @@ let state = {
         ],
         m: [
             { id: 1, name: 'Eugene', message: 'Choice!', ava: 'https://lumiere-a.akamaihd.net/v1/images/character_themuppets_kermit_09279e8e.jpeg?region=0,0,300,300', myava: 'https://partisandawn.files.wordpress.com/2011/11/fred-flintstone.jpg' },
-            { id: 2, name: 'Eugene', message: 'Hey bro', ava: 'https://lumiere-a.akamaihd.net/v1/images/character_themuppets_kermit_09279e8e.jpeg?region=0,0,300,300', myava: 'https://partisandawn.files.wordpress.com/2011/11/fred-flintstone.jpg' },
-            // { id: 3, name: 'Irison', message: 'Chur mate', ava: 'https://avatarfiles.alphacoders.com/120/thumb-120208.jpg', myava: 'https://partisandawn.files.wordpress.com/2011/11/fred-flintstone.jpg'},
+            { id: 2, name: 'Irison', message: 'Hey bro', ava: 'https://avatarfiles.alphacoders.com/120/thumb-120208.jpg', myava: 'https://partisandawn.files.wordpress.com/2011/11/fred-flintstone.jpg' },
+            { id: 3, name: 'Ronny', message: 'Chur mate', ava: 'https://cdn2.iconfinder.com/data/icons/free-color-halloween-icons/24/Ghost-512.png', myava: 'https://partisandawn.files.wordpress.com/2011/11/fred-flintstone.jpg'},
             // { id: 4, name: 'Ronny', message: 'Sweetaz', ava: 'https://cdn2.iconfinder.com/data/icons/free-color-halloween-icons/24/Ghost-512.png', myava: 'https://partisandawn.files.wordpress.com/2011/11/fred-flintstone.jpg'},
             // { id: 5, name: 'Ronny', message: 'No sweat!', ava: 'https://cdn2.iconfinder.com/data/icons/free-color-halloween-icons/24/Ghost-512.png', myava: 'https://partisandawn.files.wordpress.com/2011/11/fred-flintstone.jpg'},
             // { id: 6, name: 'Ronny', message: 'Seeya', ava: 'https://cdn2.iconfinder.com/data/icons/free-color-halloween-icons/24/Ghost-512.png', myava: 'https://partisandawn.files.wordpress.com/2011/11/fred-flintstone.jpg'}
@@ -50,6 +50,7 @@ export let AddPost = (PostMessage) => {
     };
     state.ProfilePage.PostsMessages.push(NewPost);
     rerenderCurrentState(state);
+    state.ProfilePage.PostText = "";
 }
 
 export let UpdatePost = (UpdatedText) => {

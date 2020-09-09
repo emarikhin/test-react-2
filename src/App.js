@@ -5,6 +5,7 @@ import Header from './components/Header/Header';
 import Profile from './components/Profile/Profile';
 import Navbar from './components/Navbar/Navbar';
 import Dialogs from './components/Dialogs/Dialogs';
+import PreDialogs from './components/Dialogs/PreDialogs';
 import { BrowserRouter, Route } from 'react-router-dom';
 import News from './components/MyNews/News/News';
 import MyNews from './components/MyNews/MyNews';
@@ -38,7 +39,9 @@ const App = (props) => {
   // ]
 
   // let SiteBarElements = props.appState.SiteBar.friends.map(f => <Navbar name={f.name} ava={f.ava}/>)
-console.log(props)
+  let SiteBarElements = props.appState.DialogsPage.m.map(f => {return f = f.id});
+
+debugger;
   return (
     <BrowserRouter>
       <div className='app-wrapper'>
@@ -48,11 +51,20 @@ console.log(props)
           {/* <Route path='/dialogs' component={Dialogs} /> */}
           {/* <Route path='/dialogs' render={ () => <Dialogs d={props.appState.DialogsPage.d} m={props.appState.DialogsPage.m}/>} /> */}
           {/* <Route path='/profile' component={Profile} /> */}
-          <Route path='/dialogs' render={ () => <Dialogs dialogsState={props.appState.DialogsPage} AvaDialogs={props.appState.AvaDialogs}/>} />
+          <Route exact path='/dialogs' render={ () => <PreDialogs dialogsState={props.appState.DialogsPage} AvaDialogs={props.appState.AvaDialogs}/>} />
           <Route path='/profile' render={ () => <Profile PostsMessages={props.appState.ProfilePage.PostsMessages} AddPost={props.AddPost} PostText = {props.appState.ProfilePage.PostText} UpdatePost={props.UpdatePost}/>} />
           <Route path='/news' component={MyNews} />
           <Route path='/music' component={Music} />
           <Route path='/settings' component={Settings} />
+
+          {SiteBarElements.map((value, index) => {
+            return (<Route exact path={'/dialogs/' + value} render={ () => <Dialogs dialogsState={props.appState.DialogsPage} AvaDialogs={props.appState.AvaDialogs} currentvalue={value}/>}/>)
+          }) }
+
+          {/* <Route exact path={'/dialogs/' + SiteBarElements2.next().value} render={ () => <Dialogs dialogsState={props.appState.DialogsPage} AvaDialogs={props.appState.AvaDialogs}/>} />
+          <Route exact path={'/dialogs/' + SiteBarElements2.next().value} render={ () => <Dialogs dialogsState={props.appState.DialogsPage} AvaDialogs={props.appState.AvaDialogs}/>} />
+          <Route exact path={'/dialogs/' + SiteBarElements2.next().value} render={ () => <Dialogs dialogsState={props.appState.DialogsPage} AvaDialogs={props.appState.AvaDialogs}/>} /> */}
+          {/* <Route exact path={'/dialogs/' + SiteBarElements2.next().value} render={ () => <Dialogs dialogsState={props.appState.DialogsPage} AvaDialogs={props.appState.AvaDialogs}/>} /> */}
           {/* <Route path='/friends' render={ () => <SiteBar FriendsList={props.appState.SiteBar.friends}/>} /> */}
           {/* { SiteBarElements } */}
           {/* <SiteBar name={props.appState.SiteBar.friends.name} ava={props.appState.SiteBar.friends.ava}/> */}
